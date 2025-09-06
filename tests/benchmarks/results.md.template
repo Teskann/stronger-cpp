@@ -1,0 +1,29 @@
+**Measured for __N_ITERATIONS__ iterations, for the header only:**
+
+```mermaid
+xychart-beta
+    title "Compilation time (header only), __N_ITERATIONS__ iterations"
+    x-axis [No strong type, NamedType, stronger-cpp]
+    y-axis "Compile time (s/__N_ITERATIONS__ iterations)" 0 --> __MAX_Y_HEADER__
+    bar [__NO_STRONG_TYPE_HEADER__, __NAMED_TYPE_HEADER__, __STRONGER_CPP_HEADER__]
+```
+
+According to the above chart, the compilation time of the **stronger-cpp header is __STRONGER_CPP_VS_NAMED_TYPE_HEADER__
+than NamedType header**.
+
+Compared to an implementation without strong types, the compilation is __STRONGER_CPP_VS_NO_STRONG_TYPE_HEADER__.
+
+**Measured for __N_ITERATIONS__ iterations, compiling [this file](./tests/benchmarks/compile-time.cpp)**:
+
+```mermaid
+xychart-beta
+    title "Compilation time (complete file), __N_ITERATIONS__ iterations"
+    x-axis [No strong type, NamedType, stronger-cpp]
+    y-axis "Compile time (s/__N_ITERATIONS__ iterations)" 0 --> __MAX_Y_FULL__
+    bar [__NO_STRONG_TYPE_FULL__, __NAMED_TYPE_FULL__, __STRONGER_CPP_FULL__]
+```
+
+According to the above chart, the compilation time of code using **stronger-cpp** is __STRONGER_CPP_VS_NAMED_TYPE_FULL__
+than code using NamedType.
+
+Compared to an implementation without strong types, the compilation is __STRONGER_CPP_VS_NO_STRONG_TYPE_FULL__.

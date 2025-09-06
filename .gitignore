@@ -1,0 +1,13 @@
+/.idea
+/.vscode
+/build-debug
+/build-release
+/build
+/public
+/cmake*
+/**/__pycache__/
+/tests/benchmarks/NamedType
+/tests/benchmarks/compile-time
+/tests/benchmarks/results.md
+CMakeUserPresets.json
+includes/version.hpp
