@@ -9,5 +9,8 @@
 /tests/benchmarks/NamedType
 /tests/benchmarks/compile-time
 /tests/benchmarks/results.md
+/tests/cpm/build/
+tests/cpm/cmake/
+tests/cpm/CMakeLists.txt
 CMakeUserPresets.json
 includes/version.hpp

@@ -1,0 +1,30 @@
+name: CPM
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  test-cpm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake build-essential wget g++-14
+
+      - name: Run CPM test
+        run: |
+          export CC=gcc-14
+          export CXX=g++-14
+          cd tests/cpm
+          chmod +x test_cpm.sh
+          ./test_cpm.sh
