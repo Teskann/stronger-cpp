@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.31)
+project(cpmtest)
+
+include(cmake/CPM.cmake)
+CPMAddPackage("gh:teskann/stronger-cpp#__COMMIT_PLACEHOLDER__")
+
+add_executable(cpmtest main.cpp)
+target_link_libraries(cpmtest PRIVATE stronger-cpp::stronger-cpp)

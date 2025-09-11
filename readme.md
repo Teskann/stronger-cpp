@@ -1,5 +1,4 @@
-# stronger-cpp [![Build + Tests](https://github.com/Teskann/stronger-cpp/actions/workflows/ci.yml/badge.svg)](https://github.com/Teskann/stronger-cpp/actions/workflows/ci.yml)
-
+# stronger-cpp [![Build + Tests](https://github.com/Teskann/stronger-cpp/actions/workflows/ci.yml/badge.svg)](https://github.com/Teskann/stronger-cpp/actions/workflows/ci.yml) [![CPM](https://github.com/teskann/stronger-cpp/actions/workflows/cpm.yml/badge.svg)](https://github.com/teskann/stronger-cpp/actions/workflows/cpm.yml)
 
 ### Single-header C++23 strong typing library
 
@@ -15,7 +14,7 @@ making it harder to accidentally mix or misuse variables in C++ code.*
 - ✅ No visible runtime overhead. <sup>[[see more]](#runtime)</sup>
 - ✅ Tested at compile time (strong guarantee against undefined behaviors)
 
-# Table of Contents
+## Table of Contents
 
 * [Usage](#usage)
     * [Basics](#basics)
@@ -34,6 +33,9 @@ making it harder to accidentally mix or misuse variables in C++ code.*
         * [Compiling the library header](#compiling-the-library-header)
         * [Compiling C++ file](#compiling-this-cpp-file)
     * [Runtime](#runtime)
+* [Get it](#get-it)
+  * [From release](#from-release)
+  * [CPM](#using-cpm)
 * [Build from source](#build-from-source)
     * [Debug](#debug)
     * [Release](#release)
@@ -57,7 +59,7 @@ Once declared, you can use `Amount` and `Name` in your code:
 
 ```C++
 void print_info(const Name& name, Amount amount) {
-    std::println("{} gave {.2f}$", amount);
+    std::println("{} gave {.2f}$", name, amount);
 }
 
 Name alice{"Alice"s};
@@ -385,6 +387,20 @@ is close to 1 ms.
 
 We can conclude that **there is no visible runtime overhead when using
 a strong typing library, no matter if it is NamedType or stronger-cpp**.
+
+## Get it
+
+### Using CPM
+
+```cmake
+# Get any version (here getting the latest commit on master)
+CPMAddPackage("gh:teskann/stronger-cpp#master")
+target_link_libraries(YOUR_TARGET PRIVATE stronger-cpp::stronger-cpp)
+```
+
+### From release
+
+You can download the latest release from [here](https://github.com/Teskann/stronger-cpp/releases/latest).
 
 ## Build from source
 
